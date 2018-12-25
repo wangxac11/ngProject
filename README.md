@@ -1,7 +1,8 @@
 # Ng7引入Swiper
-1. 安装swiper依赖包
+1. 安装swiper依赖包及转换器
 ```
 npm install swiper --save
+npm install @types/swiper --save
 ```
 2. 配置anglar.json
 ```
