@@ -9,13 +9,6 @@ import { SearchComponent } from './search/search.component';
 import { CarouselComponent } from './carousel/carousel.component';
 import { ProductComponent } from './product/product.component';
 import { StarsComponent } from './stars/stars.component';
-import { SwiperModule } from 'ngx-swiper-wrapper';
-import { SWIPER_CONFIG } from 'ngx-swiper-wrapper';
-import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
-const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
-  direction: 'horizontal',
-  slidesPerView: 'auto'
-};
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,12 +22,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   imports: [
     BrowserModule,
     AppRoutingModule,
-    SwiperModule
   ],
-  providers: [{
-    provide: SWIPER_CONFIG,
-    useValue: DEFAULT_SWIPER_CONFIG
-  }],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
