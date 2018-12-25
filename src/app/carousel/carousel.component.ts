@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component} from '@angular/core';
 import Swiper from 'swiper';
 // @ts-ignore
 // import * as Swiper from './../../assets/js/swiper.min.js';
