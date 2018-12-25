@@ -1,13 +1,51 @@
-# NgProject
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.1.
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-# 添加静态资源引用
-```angular2
-// @ts-ignore
-// import * as Swiper from './../../assets/js/swiper.min.js';
+# Ng7引入Swiper
+1. 安装swiper依赖包及转换器
+```
+npm install swiper --save
+npm install @types/swiper --save
+```
+2. 配置anglar.json
+```json
+"styles": [
+              "src/styles.styl",
+              "./node_modules/swiper/dist/css/swiper.min.css"
+            ],
+            "scripts": [
+              "./node_modules/swiper/dist/js/swiper.min.js"
+            ]
+```
+3. tsconfig.app.json添加类型支持
+```
+"compilerOptions": {
+    "types": ["swiper"]
+  },
+```
+4. 组件内引入
+```typescript
+import { AfterViewInit, Component} from '@angular/core';
+import Swiper from 'swiper';
+@Component({
+  selector: 'app-carousel',
+  templateUrl: './carousel.component.html',
+  styleUrls: ['./carousel.component.styl']
+})
+export class CarouselComponent implements AfterViewInit {
+  constructor() { }
+  ngAfterViewInit() {
+    const myswiper = new Swiper('.swiper-container', {
+      autoplay: true,
+      speed: 300,
+      pagination: {
+        el: '.swiper-pagination',
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      scrollbar: {
+        el: '.swiper-scrollbar',
+      }
+    });
+  }
+}
 ```
