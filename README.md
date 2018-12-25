@@ -33,18 +33,7 @@ export class CarouselComponent implements AfterViewInit {
   constructor() { }
   ngAfterViewInit() {
     const myswiper = new Swiper('.swiper-container', {
-      autoplay: true,
-      speed: 300,
-      pagination: {
-        el: '.swiper-pagination',
-      },
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-      scrollbar: {
-        el: '.swiper-scrollbar',
-      }
+      autoplay: true
     });
   }
 }
